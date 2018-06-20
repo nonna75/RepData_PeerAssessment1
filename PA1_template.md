@@ -127,6 +127,9 @@ Null_value <- sum(is.na(activeData))
 Null_value
   
 ```
+```
+## [1] 2304
+```
 
 Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval
 
@@ -138,7 +141,19 @@ activeData$steps <- ifelse(is.na(activeData$steps),
                            activeData$steps)
 head(activeData,10)
 ```
-
+```
+##   steps       date       interval 
+##     0      2012-10-01        0    
+##     0      2012-10-01        5    
+##     0      2012-10-01       10    
+##     0      2012-10-01       15    
+##     0      2012-10-01       20    
+##     0      2012-10-01       25  
+##     0      2012-10-01       30    
+##     0      2012-10-01       35    
+##     0      2012-10-01       40  
+##     0      2012-10-01       45 
+```
 Make a histogram of the total number of steps taken each day and calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
 ```r
