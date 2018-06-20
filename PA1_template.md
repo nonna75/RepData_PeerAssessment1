@@ -62,7 +62,7 @@ ggplot(Total_Steps, aes(x = steps)) +
   labs(title = "Daily Steps", x = "Steps", y = "Frequency")
 
 ```
-![plot of chunk daily](figure/unnamed-chunk-4-1) 
+![plot of chunk daily](figure/unnamed-chunk-4-1.png) 
 
 
 #Calculate and report the mean and median of the total number of steps taken per day. 
