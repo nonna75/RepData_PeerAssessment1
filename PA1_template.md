@@ -71,7 +71,7 @@ head(Total_Steps,10)
 ## ..        ...         ... ..
 ```
 
-##Histogram of the total number of steps taken each day. 
+## Histogram of the total number of steps taken each day. 
 
 ```r
 
@@ -83,7 +83,7 @@ ggplot(Total_Steps, aes(x = steps)) +
 ![plot of chunk daily](figure/unnamed-chunk-4-1.png) 
 
 
-#Calculate and report the mean and median of the total number of steps taken per day. 
+### Calculate and report the mean and median of the total number of steps taken per day. 
 
 ```r
 
@@ -95,7 +95,7 @@ mean_median <-Total_Steps %>%
     ## 1:   10766.19        10765
 
 
-#What is the average daily activity pattern?
+### What is the average daily activity pattern?
  
 ```r
 
@@ -111,7 +111,7 @@ ggplot(IntervalDT, aes(x =interval , y =steps)) +
 ![plot of chunk histogram](figure/unnamed-chunk-6-1.png) 
 
 
-#which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+### which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
  
 ```r
 maxIntrval  <- IntervalDT %>%
@@ -121,7 +121,7 @@ maxIntrval
 ```
     ##max_interval   835
     
-#Calculate and report the total number of missing values in the dataset
+### Calculate and report the total number of missing values in the dataset
 ```{r echo=FALSE}
 Null_value <- sum(is.na(activeData))
 Null_value
@@ -173,7 +173,7 @@ Type of Estimate | Mean_Steps | Median_Steps
 First Part (with na) | 10765 | 10765
 Second Part (fillin in na with median) | 9354.23 | 10395
 
-#Are there differences in activity patterns between weekdays and weekends?
+# Are there differences in activity patterns between weekdays and weekends?
 Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
 ```r
