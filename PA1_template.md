@@ -108,6 +108,8 @@ ggplot(IntervalDT, aes(x =interval , y =steps)) +
   labs(title = "Avg. Daily Steps", x = "Interval", y = "Avg. Steps per day")
 
 ```
+![plot of chunk histogram](figure/unnamed-chunk-6-1.png) 
+
 
 #which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
  
@@ -179,3 +181,4 @@ ggplot(avarge_steps, aes(x =interval , y =steps)) +
   ylab("avarage number of steps")
 
 ```
+![plot of chunk histogram](figure/unnamed-chunk-12-1.png) 
