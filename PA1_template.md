@@ -24,7 +24,7 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 
 ## Loading and preprocessing the data
 
-```{r echo=FALSE }
+```r
 library(data.table)
 library(ggplot2)
 library(dplyr)
