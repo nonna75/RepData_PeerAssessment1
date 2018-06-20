@@ -44,7 +44,7 @@ activeData <- data.table::fread(input = "activity.csv")
 ## What is  total number of steps taken per day?
  
 
-```{r echo=FALSE}
+```r
 
 Total_Steps <- activeData %>%
   group_by(date) %>%
@@ -73,7 +73,7 @@ head(Total_Steps,10)
 
 ##Histogram of the total number of steps taken each day. 
 
-```{r echo=FALSE}
+```r
 
 ggplot(Total_Steps, aes(x = steps)) +
   geom_histogram(fill = "blue", binwidth = 1000) +
@@ -85,7 +85,7 @@ ggplot(Total_Steps, aes(x = steps)) +
 
 #Calculate and report the mean and median of the total number of steps taken per day. 
 
-```{r echo=FALSE}
+```r
 
 mean_median <-Total_Steps %>%
   dplyr::summarize(steps_mean = mean(steps, na.rm=FALSE), steps_median = median(steps, na.rm=FALSE))
@@ -97,7 +97,7 @@ mean_median <-Total_Steps %>%
 
 #What is the average daily activity pattern?
  
-```{r echo=FALSE}
+```r
 
 IntervalDT  <- activeData %>%
   group_by(interval) %>%
@@ -113,7 +113,7 @@ ggplot(IntervalDT, aes(x =interval , y =steps)) +
 
 #which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
  
-```{r echo=FALSE}
+```r
 maxIntrval  <- IntervalDT %>%
   filter(steps == max(steps))
 
@@ -132,7 +132,7 @@ Devise a strategy for filling in all of the missing values in the dataset. The s
 
 <b>I used a strategy for filing in all of the missing values by using ifelse statement , if found null value fill with median of steps and return steps </b>
 
-```{r echo=FALSE}
+```r
 activeData$steps <- ifelse(is.na(activeData$steps),
                            ave(activeData$steps, FUN = function(x) median(x,na.rm=FALSE)),
                            activeData$steps)
@@ -141,7 +141,7 @@ head(activeData,10)
 
 Make a histogram of the total number of steps taken each day and calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-```{r echo=FALSE}
+```r
 # total number of steps taken per day
 Total_Steps <- activeData %>%
   group_by(date) %>%
@@ -160,7 +160,8 @@ Second Part (fillin in na with median) | 9354.23 | 10395
 
 #Are there differences in activity patterns between weekdays and weekends?
 Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
-```{r echo=FALSE}
+
+```r
 
 activeData[, date := as.POSIXct(date, format = "%Y-%m-%d")]
 activeData[, `Day of Week`:= weekdays(x = date)]
@@ -172,7 +173,7 @@ head(activeData,10)
 ```
 
 
-```{r echo=FALSE}
+```r
 avarge_steps<- aggregate(steps ~ interval + `weekday or weekend`, data=activeData,mean)
 ggplot(avarge_steps, aes(x =interval , y =steps)) +
   geom_line(color = "Blue", size = 1) +
