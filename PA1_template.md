@@ -51,6 +51,24 @@ Total_Steps <- activeData %>%
   dplyr::summarize(steps = sum(steps, na.rm=FALSE))
 
 head(Total_Steps,10)
+
+```
+```
+
+## Source: local data frame [61 x 3]
+## 
+##          date total_steps na
+## 1  2012-10-01           0  1
+## 2  2012-10-02         126  0
+## 3  2012-10-03       11352  0
+## 4  2012-10-04       12116  0
+## 5  2012-10-05       13294  0
+## 6  2012-10-06       15420  0
+## 7  2012-10-07       11015  0
+## 8  2012-10-08           0  1
+## 9  2012-10-09       12811  0
+## 10 2012-10-10        9900  0
+## ..        ...         ... ..
 ```
 
 ##Histogram of the total number of steps taken each day. 
